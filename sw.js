@@ -1,4 +1,4 @@
-const CACHE_NAME = "isometric-workout-coach-v1";
+const CACHE_NAME = "isometric-workout-coach-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -6,7 +6,12 @@ const ASSETS = [
   "./script.js",
   "./manifest.json",
   "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icons/icon-512.png",
+  "./images/plank.png",
+  "./images/wall-sit.png",
+  "./images/hollow-hold.png",
+  "./images/side-plank.png",
+  "./images/glute-bridge.png"
 ];
 
 self.addEventListener("install", (event) => {
