@@ -1,5 +1,3 @@
-
-```javascript
 const CACHE_NAME = "isometric-workout-coach-v1";
 const ASSETS = [
   "./",
@@ -36,4 +34,3 @@ self.addEventListener("fetch", (event) => {
     caches.match(event.request).then((cached) => cached || fetch(event.request))
   );
 });
-```
