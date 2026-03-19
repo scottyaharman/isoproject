@@ -1,0 +1,79 @@
+```html
+          </label>
+
+          <div class="button-row">
+            <button id="startBtn" class="primary">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+          </div>
+
+          <div class="button-row secondary-row">
+            <button id="savePresetBtn">Save Preset</button>
+            <button id="loadPresetBtn">Load Saved</button>
+            <button id="installBtn" hidden>Install App</button>
+          </div>
+
+          <div class="session-summary">
+            <div><span>Total work</span><strong id="summaryWork">90s</strong></div>
+            <div><span>Total rest</span><strong id="summaryRest">60s</strong></div>
+            <div><span>Total session</span><strong id="summaryTotal">150s</strong></div>
+          </div>
+        </section>
+
+        <section class="card display-card">
+          <div class="status-row">
+            <span class="badge" id="phaseBadge">Ready</span>
+            <span class="badge secondary" id="poseBadge">Plank</span>
+          </div>
+
+          <h2 id="poseTitle">Plank</h2>
+          <p id="instructionText">Choose your settings and press Start.</p>
+
+          <div class="timer-block">
+            <div class="timer-label">Remaining</div>
+            <div class="timer-value" id="timerValue">30</div>
+            <div class="timer-suffix">seconds</div>
+          </div>
+
+          <div class="progress-section">
+            <div class="progress-meta">
+              <span>Session progress</span>
+              <span id="sessionProgressLabel">0%</span>
+            </div>
+            <div class="progress-bar"><div id="sessionProgressBar"></div></div>
+          </div>
+
+          <div class="progress-section">
+            <div class="progress-meta">
+              <span id="repProgressName">Rep progress</span>
+              <span id="repProgressLabel">0%</span>
+            </div>
+            <div class="progress-bar"><div id="repProgressBar"></div></div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>Current rep</span>
+              <strong id="currentRepStat">0 / 3</strong>
+            </div>
+            <div class="stat-card">
+              <span>Rep duration</span>
+              <strong id="repDurationStat">30s</strong>
+            </div>
+            <div class="stat-card">
+              <span>Rest interval</span>
+              <strong id="restDurationStat">30s</strong>
+            </div>
+          </div>
+
+          <div class="image-wrap">
+            <img id="poseImage" alt="Workout pose form guide" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
