@@ -1,99 +1,32 @@
 const DEFAULT_REST_SECONDS = 30;
 
-function svgDataUri(svg) {
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-}
-
 const poseLibrary = {
   plank: {
     name: "Plank",
     cue: "Keep a straight line from shoulders to heels. Brace your core and avoid sagging hips.",
-    image: svgDataUri(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
-        <rect width="100%" height="100%" fill="#f8fafc"/>
-        <text x="30" y="45" font-size="28" font-family="Arial" fill="#0f172a">Plank</text>
-        <line x1="70" y1="275" x2="530" y2="275" stroke="#94a3b8" stroke-width="6"/>
-        <circle cx="140" cy="135" r="24" fill="#0f172a"/>
-        <line x1="160" y1="145" x2="330" y2="175" stroke="#0f172a" stroke-width="20" stroke-linecap="round"/>
-        <line x1="320" y1="175" x2="445" y2="188" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="180" y1="168" x2="120" y2="255" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
-        <line x1="360" y1="180" x2="305" y2="270" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
-        <line x1="440" y1="190" x2="510" y2="270" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
-      </svg>
-    `),
+    image: "./images/plank.png",
   },
   wallSit: {
     name: "Wall Sit",
     cue: "Back flat to the wall, thighs near parallel, knees stacked over ankles.",
-    image: svgDataUri(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
-        <rect width="100%" height="100%" fill="#f8fafc"/>
-        <text x="30" y="45" font-size="28" font-family="Arial" fill="#0f172a">Wall Sit</text>
-        <rect x="100" y="55" width="20" height="235" fill="#94a3b8"/>
-        <line x1="70" y1="290" x2="540" y2="290" stroke="#94a3b8" stroke-width="6"/>
-        <circle cx="175" cy="105" r="24" fill="#0f172a"/>
-        <line x1="155" y1="130" x2="155" y2="210" stroke="#0f172a" stroke-width="20" stroke-linecap="round"/>
-        <line x1="155" y1="160" x2="250" y2="160" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="250" y1="160" x2="250" y2="250" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="155" y1="210" x2="155" y2="285" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="250" y1="250" x2="325" y2="250" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-      </svg>
-    `),
+    image: "./images/wall-sit.png",
   },
   hollowHold: {
     name: "Hollow Hold",
     cue: "Lower back pressed into the floor. Ribs down, arms and legs long.",
-    image: svgDataUri(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
-        <rect width="100%" height="100%" fill="#f8fafc"/>
-        <text x="30" y="45" font-size="28" font-family="Arial" fill="#0f172a">Hollow Hold</text>
-        <line x1="60" y1="270" x2="540" y2="270" stroke="#94a3b8" stroke-width="6"/>
-        <circle cx="175" cy="210" r="22" fill="#0f172a"/>
-        <line x1="195" y1="205" x2="315" y2="175" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="300" y1="178" x2="405" y2="150" stroke="#0f172a" stroke-width="16" stroke-linecap="round"/>
-        <line x1="210" y1="190" x2="120" y2="145" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="315" y1="175" x2="420" y2="240" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="315" y1="175" x2="435" y2="195" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-      </svg>
-    `),
+    image: "./images/hollow-hold.png",
   },
   sidePlank: {
     name: "Side Plank",
     cue: "Lift hips high, stack shoulders, and keep the body in one long line.",
-    image: svgDataUri(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
-        <rect width="100%" height="100%" fill="#f8fafc"/>
-        <text x="30" y="45" font-size="28" font-family="Arial" fill="#0f172a">Side Plank</text>
-        <line x1="70" y1="280" x2="540" y2="280" stroke="#94a3b8" stroke-width="6"/>
-        <circle cx="220" cy="120" r="22" fill="#0f172a"/>
-        <line x1="205" y1="140" x2="305" y2="185" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="305" y1="185" x2="400" y2="225" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="260" y1="165" x2="180" y2="215" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="250" y1="160" x2="240" y2="260" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="305" y1="185" x2="285" y2="275" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-      </svg>
-    `),
+    image: "./images/side-plank.png",
   },
   gluteBridgeHold: {
     name: "Glute Bridge Hold",
     cue: "Drive through heels, squeeze glutes, and keep ribs down at the top.",
-    image: svgDataUri(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
-        <rect width="100%" height="100%" fill="#f8fafc"/>
-        <text x="30" y="45" font-size="28" font-family="Arial" fill="#0f172a">Glute Bridge Hold</text>
-        <line x1="60" y1="280" x2="540" y2="280" stroke="#94a3b8" stroke-width="6"/>
-        <circle cx="145" cy="205" r="22" fill="#0f172a"/>
-        <line x1="165" y1="200" x2="245" y2="205" stroke="#0f172a" stroke-width="16" stroke-linecap="round"/>
-        <line x1="245" y1="205" x2="340" y2="160" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="340" y1="160" x2="430" y2="220" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
-        <line x1="210" y1="205" x2="180" y2="255" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="410" y1="205" x2="410" y2="280" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-        <line x1="430" y1="220" x2="485" y2="280" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
-      </svg>
-    `),
+    image: "./images/glute-bridge.png",
   },
 };
-
 const elements = {
   poseSelect: document.getElementById("poseSelect"),
   durationInput: document.getElementById("durationInput"),
