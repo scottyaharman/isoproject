@@ -1,4 +1,62 @@
-```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="A personal isometric workout coach with timers, images, and rest intervals." />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <title>Isometric Workout Coach</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <h1>Isometric Workout Coach</h1>
+          <p class="subtitle">Simple offline workout timer with form guidance</p>
+        </div>
+        <div class="install-status" id="installStatus">Ready</div>
+      </header>
+
+      <main class="layout">
+        <section class="card controls-card">
+          <h2>Workout Setup</h2>
+
+          <label for="poseSelect">Pose</label>
+          <select id="poseSelect"></select>
+
+          <div class="two-col">
+            <div>
+              <label for="durationInput">Duration per rep (seconds)</label>
+              <input id="durationInput" type="number" min="5" step="5" value="30" />
+            </div>
+            <div>
+              <label for="repsInput">Reps</label>
+              <input id="repsInput" type="number" min="1" step="1" value="3" />
+            </div>
+          </div>
+
+          <div>
+            <label for="restInput">Rest between reps (seconds)</label>
+            <input id="restInput" type="number" min="5" step="5" value="30" />
+          </div>
+
+          <div>
+            <label for="customImageInput">Custom image URL (optional)</label>
+            <input id="customImageInput" type="url" placeholder="https://example.com/plank.jpg" />
+          </div>
+
+          <label class="checkbox-row">
+            <input id="audioToggle" type="checkbox" checked />
+            <span>Enable spoken cues</span>
+          </label>
+
+          <label class="checkbox-row">
+            <input id="wakeLockToggle" type="checkbox" checked />
+            <span>Keep screen awake during session</span>
           </label>
 
           <div class="button-row">
@@ -76,4 +134,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-```
